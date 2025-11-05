@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Town Concert Hall</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+</head>
+<body>
+    <header>
+        <h1>Town Concert Hall</h1>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <main>
+    <section id="intro">
+      <h2>Welcome to Town Concert Hall</h2>
+      <p>Experience world-class performances in a stunning venue designed for music lovers.</p>
+      <img src="images/concert.jpg" alt="Concert crowd enjoying a live show" />
+    </section>
+
+    <section id="featured-events">
+      <h2>Upcoming Highlights</h2>
+      <ul>
+        <li>Rock Night Extravaganza - March 15</li>
+        <li>Classical Evening - March 28</li>
+        <li>Pop Fusion Festival - April 10</li>
+      </ul>
+      <a href="events.html" class="btn">View All Events</a>
+    </section>
+
+    <section id="contact">
+      <h2>Book Your Tickets or Venue</h2>
+      <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" id="submit-btn">Send Inquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Town Concert Hall | Follow us:
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </p>
+    <a href="#top" class="back-to-top">Back to Top ↑</a>
+  </footer>
+</body>
+</html>

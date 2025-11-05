@@ -1,0 +1,183 @@
+/* === HAMBURGER MENU STYLES === */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  z-index: 2000;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Default nav for desktop */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 100%; /* Now starts below the header */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    /* Start hidden with smooth slide-down effect */
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  nav ul li {
+    padding: 15px 0;
+  }
+
+  nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  /* Show hamburger icon on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  /* Show dropdown when checked */
+  #menu-toggle:checked + .hamburger + nav ul {
+    max-height: 300px; /* expand smoothly */
+    opacity: 1;
+    padding: 1rem 0;
+  }
+}
+
+/* === GLOBAL STYLES === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  background: #f8f8f8;
+  color: #333;
+}
+
+header, footer {
+  background: linear-gradient(to right, #222, #444);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative; /* ensures hamburger positions correctly */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  text-decoration: underline;
+}
+
+/* Layout Sections */
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+table th {
+  background: #444;
+  color: white;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#submit-btn {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#submit-btn:hover {
+  background: #444;
+}
+
+/* Back to Top */
+.back-to-top {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ddd;
+}
