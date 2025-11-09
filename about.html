@@ -9,6 +9,15 @@
 <body>
   <header>
     <h1>About Town Concert Hall</h1>
+
+    <!-- Mobile Hamburger (3-bar animated version) -->
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -19,14 +28,20 @@
   </header>
 
   <main>
-    <section>
+    <!-- OUR STORY -->
+    <section class="about-section">
       <h2>Our Story</h2>
-      <p>Founded in 1998, the Town Concert Hall has hosted thousands of performances across genres. 
-        Bringing life, comradery, and community to the town.</p>
-      <img src="images/stage.png" alt="Concert hall stage" />
+      <p>
+        Founded in 1998, the Town Concert Hall has hosted thousands of performances across genres, 
+        bringing life, camaraderie, and community to the town.
+      </p>
+      <div class="about-image">
+        <img src="images/StringConcert.webp" alt="Concert hall stage" />
+      </div>
     </section>
 
-    <section>
+    <!-- OUR MISSION -->
+    <section class="about-section">
       <h2>Our Mission</h2>
       <ul>
         <li>Support local and international artists.</li>
@@ -35,15 +50,22 @@
       </ul>
     </section>
 
-    <section>
+    <!-- MEET THE TEAM -->
+    <section class="about-section">
       <h2>Meet the Team</h2>
       <article>
         <h3>Jane Doe — Director</h3>
-        <p>Jane leads with over 20 years of experience in event management.</p>
+        <p>
+          Jane leads with over 20 years of experience in event management. She is also a 
+          member of the Community Events Board and has served in the PTA department for over 15 years.
+        </p>
       </article>
       <article>
         <h3>Mark Lee — Head of Production</h3>
-        <p>Mark ensures every show is an unforgettable masterpiece.</p>
+        <p>
+          Mark ensures every show is an unforgettable masterpiece — 
+          providing the town with the sound, lighting, and atmosphere that make every night special.
+        </p>
       </article>
     </section>
   </main>
