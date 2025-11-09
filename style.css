@@ -1,20 +1,44 @@
 /* === HAMBURGER MENU STYLES === */
 .hamburger {
   display: none;
-  font-size: 30px;
-  cursor: pointer;
-  user-select: none;
   position: absolute;
-  top: 20px;
+  top: 22px;
   right: 25px;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
   z-index: 2000;
 }
 
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  margin: 5px 0;
+  transition: all 0.4s ease;
+}
+
+/* Hide checkbox input */
 #menu-toggle {
   display: none;
 }
 
-/* Default nav for desktop */
+/* Animate bars */
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Default for desktop */
 nav ul {
   list-style: none;
   display: flex;
@@ -30,15 +54,13 @@ nav ul {
     flex-direction: column;
     background-color: #333;
     position: absolute;
-    top: 100%; /* Now starts below the header */
+    top: 100%;
     left: 0;
     width: 100%;
     text-align: center;
     padding: 0;
     margin: 0;
     overflow: hidden;
-
-    /* Start hidden with smooth slide-down effect */
     max-height: 0;
     opacity: 0;
     transition: all 0.4s ease;
@@ -62,7 +84,7 @@ nav ul {
 
   /* Show dropdown when checked */
   #menu-toggle:checked + .hamburger + nav ul {
-    max-height: 300px; /* expand smoothly */
+    max-height: 300px;
     opacity: 1;
     padding: 1rem 0;
   }
@@ -85,6 +107,11 @@ header, footer {
   position: relative; /* ensures hamburger positions correctly */
 }
 
+nav {
+  position: relative;
+  z-index: 3000; /* keeps dropdown above hero */
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -104,7 +131,7 @@ nav a.active {
   text-decoration: underline;
 }
 
-/* Layout Sections */
+/* === PAGE LAYOUT === */
 main {
   padding: 20px;
 }
@@ -116,7 +143,46 @@ section {
   border-radius: 8px;
 }
 
-/* Table Styling */
+/* === HERO SECTION === */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  max-width: 90%;
+}
+
+.hero-text h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #f2f2f2;
+}
+
+/* === TABLE STYLING === */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -132,24 +198,42 @@ table th {
   color: white;
 }
 
-/* Gallery */
+/* === GALLERY (Responsive) === */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 1rem;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Form Styling */
+/* === ABOUT PAGE IMAGE RESPONSIVE FIX === */
+.about-image img,
+section img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 1rem auto;
+  object-fit: cover;
+}
+
+/* === FORM STYLING === */
 form {
   display: flex;
   flex-direction: column;
@@ -175,9 +259,34 @@ input, textarea {
   background: #444;
 }
 
-/* Back to Top */
+/* === FOOTER / BACK TO TOP === */
 .back-to-top {
   display: inline-block;
   margin-top: 10px;
   color: #ddd;
+}
+
+/* === MOBILE OPTIMIZATION === */
+@media (max-width: 768px) {
+  .hero img {
+    height: 50vh;
+  }
+
+  .hero-text {
+    bottom: 1rem;
+    padding: 0.8rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 8px;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  nav ul {
+    z-index: 2500; /* keeps dropdown above all content */
+  }
 }
