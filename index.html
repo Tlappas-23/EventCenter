@@ -3,66 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Town Concert Hall</title>
+  <title>Home | Town Concert Hall</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.png" type="image/png" />
 </head>
 <body>
-    <header>
-        <h1>Town Concert Hall</h1>
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="hamburger">&#9776;</label>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Welcome to Town Concert Hall</h1>
+
+    <!-- Mobile Hamburger (3-bar animated version) -->
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-    <section id="intro">
-      <h2>Welcome to Town Concert Hall</h2>
-      <p>Experience world-class performances in a stunning venue designed for music lovers.</p>
-      <img src="images/concert.jpg" alt="Concert crowd enjoying a live show" />
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <img src="images/OutdoorEvent.jpg" alt="Outdoor concert event" />
+      <div class="hero-text">
+        <h2>Experience Live Music Like Never Before</h2>
+        <p>From classical symphonies to rock concerts, join us in celebrating music and art at its finest.</p>
+      </div>
     </section>
 
-    <section id="featured-events">
-      <h2>Upcoming Highlights</h2>
-      <ul>
-        <li>Rock Night Extravaganza - March 15</li>
-        <li>Classical Evening - March 28</li>
-        <li>Pop Fusion Festival - April 10</li>
-      </ul>
-      <a href="events.html" class="btn">View All Events</a>
-    </section>
-
-    <section id="contact">
-      <h2>Book Your Tickets or Venue</h2>
-      <form>
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <button type="submit" id="submit-btn">Send Inquiry</button>
-      </form>
+    <!-- FEATURED MOMENTS -->
+    <section>
+      <h2>Featured Moments</h2>
+      <div class="gallery">
+        <img src="images/Dancing.jpe" alt="People dancing at concert" />
+        <img src="images/RockConcert.jpg" alt="Rock concert performance" />
+        <img src="images/StringConcert.webp" alt="String concert performance" />
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Town Concert Hall | Follow us:
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">Twitter</a>
-    </p>
-    <a href="#top" class="back-to-top">Back to Top ↑</a>
+    <p>&copy; 2025 Town Concert Hall</p>
   </footer>
 </body>
 </html>
